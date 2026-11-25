@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Contact } from '@/components/contact'
 import { MediaBlock } from '@/components/media-item'
+import { profile } from '@/content/profile'
 import { getProject, projects } from '@/content/projects'
 
 export const dynamicParams = false
@@ -19,7 +20,7 @@ export async function generateMetadata({
   const project = getProject(slug)
   if (!project) return {}
   return {
-    title: `${project.title} — 박주혜 Juhye`,
+    title: `${project.title} — ${profile.name}`,
     description: project.description?.split('\n')[0],
   }
 }

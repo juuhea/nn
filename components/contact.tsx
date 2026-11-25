@@ -1,3 +1,5 @@
+import { profile } from '@/content/profile'
+
 const linkClass =
   'underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground'
 
@@ -14,21 +16,21 @@ export function Contact() {
         Contact
       </h2>
       <div className="mt-5 flex flex-col gap-1 text-base leading-relaxed">
-        <p className="font-medium">박주혜 Juhye</p>
-        <p>Designer</p>
+        <p className="font-medium">{profile.name}</p>
+        <p>{profile.role}</p>
         <p className="mt-3">
-          <a href="mailto:juwisdom0504@gmail.com" className={linkClass}>
-            juwisdom0504@gmail.com
+          <a href={`mailto:${profile.email}`} className={linkClass}>
+            {profile.email}
           </a>
         </p>
         <p>
           <a
-            href="https://www.instagram.com/juuhsuun/"
+            href={profile.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={linkClass}
           >
-            Instagram @juuhsuun
+            Instagram @{profile.instagramHandle}
           </a>
         </p>
       </div>

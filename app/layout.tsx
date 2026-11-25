@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Noto_Sans_KR } from 'next/font/google'
+import { profile } from '@/content/profile'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -11,8 +12,8 @@ const notoSansKr = Noto_Sans_KR({
 })
 
 export const metadata: Metadata = {
-  title: '박주혜 Juhye — Designer',
-  description: 'Portfolio of 박주혜 Juhye, Designer.',
+  title: `${profile.name} — ${profile.role}`,
+  description: `Portfolio of ${profile.name}, ${profile.role}.`,
   icons: {
     icon: [
       {
